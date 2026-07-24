@@ -1,0 +1,18 @@
+# Dataset
+dataset/
+
+# Trained Models
+model/
+*.keras
+*.h5
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
