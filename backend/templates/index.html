@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>🌱 AgriSense AI</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="header">
+
+    <h1>🌱 AgriSense AI</h1>
+
+    <p class="subtitle">
+        AI Powered Plant Disease Detection & Advisory System
+    </p>
+
+    <div class="stats">
+
+        <div class="stat-card">
+            <h3>38+</h3>
+            <p>Disease Classes</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>95.87%</h3>
+            <p>Validation Accuracy</p>
+        </div>
+
+        <div class="stat-card">
+            <h3>EfficientNetB0</h3>
+            <p>Deep Learning Model</p>
+        </div>
+
+    </div>
+
+</div>
+
+        <!-- Upload -->
+
+        <div class="upload-options">
+
+    <input
+            type="file"
+            id="imageInput"
+            accept="image/*">
+
+    <button id="cameraBtn">
+
+        📷 Use Camera
+
+    </button>
+
+</div>
+
+        <!-- Preview -->
+
+        <div class="preview-container">
+
+            <img
+                    id="preview"
+                    src=""
+                    alt="Leaf Preview">
+
+        </div>
+
+        <!-- Button -->
+
+        <button id="predictBtn">
+
+            🔍 Predict Disease
+
+        </button>
+
+        <!-- Loading -->
+
+        <div id="loading" class="hidden">
+
+            <div class="spinner"></div>
+
+            <p>Analyzing Leaf...</p>
+
+        </div>
+
+        <!-- RESULT -->
+
+        <div id="result" class="hidden">
+
+            <h2>🌿 Prediction Result</h2>
+
+            <!-- Crop -->
+
+            <div class="result-card">
+
+                <h3>🌱 Crop</h3>
+
+                <p id="crop">--</p>
+
+            </div>
+
+            <!-- Disease -->
+
+            <div class="result-card">
+
+                <h3>🦠 Disease</h3>
+
+                <p id="disease">--</p>
+
+            </div>
+
+            <!-- Confidence -->
+
+            <div class="result-card">
+
+                <h3>🎯 Confidence</h3>
+
+                <p id="confidence">--</p>
+
+                <div class="progress">
+
+                    <div id="confidenceBar">
+
+                        0%
+
+                    </div>
+
+                </div>
+                <div id="confidenceMessage" class="confidence-message"></div>
+
+<div id="warningBox" class="warning-box"></div>
+
+            </div>
+
+            <!-- Severity -->
+
+            <div class="result-card">
+
+                <h3>⚠ Severity</h3>
+
+                <span id="severity" class="severity">
+
+                    --
+
+                </span>
+
+            </div>
+            
+                <h3>🏆 Top 3 Predictions</h3>
+
+<div id="topPredictions" class="top-predictions"></div>
+
+            <!-- Description -->
+
+            <div class="result-card">
+
+                <h3>📖 Description</h3>
+
+                <p id="description"></p>
+
+            </div>
+
+            <!-- Cause -->
+
+            <div class="result-card">
+
+                <h3>🧬 Cause</h3>
+
+                <p id="cause"></p>
+
+            </div>
+
+            <!-- Symptoms -->
+
+            <div class="result-card">
+
+                <h3>🔍 Symptoms</h3>
+
+                <ul id="symptoms"></ul>
+
+            </div>
+
+            <!-- Treatment -->
+
+            <div class="result-card">
+
+                <h3>💊 Treatment</h3>
+
+                <ul id="treatment"></ul>
+
+            </div>
+
+            <!-- Prevention -->
+
+            <div class="result-card">
+
+                <h3>🛡 Prevention</h3>
+
+                <ul id="prevention"></ul>
+
+            </div>
+            <button id="resetBtn" class="hidden">
+
+    📂 Predict Another Image
+
+</button>
+
+        </div>
+
+    </div>
+
+</div>
+<!-- Camera Modal -->
+
+<div id="cameraModal" class="camera-modal hidden">
+
+    <div class="camera-content">
+
+        <video id="video" autoplay playsinline></video>
+
+        <canvas id="canvas" style="display:none;"></canvas>
+
+        <div class="camera-buttons">
+
+            <button id="captureBtn">
+                📸 Capture
+            </button>
+
+            <button id="closeCameraBtn">
+                ❌ Close
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+
+</html>

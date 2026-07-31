@@ -1,8 +1,17 @@
 # Dataset
 dataset/
+leaf_detector_dataset/
+benchmark_200/
+eval_dataset_200/
+test_images/
+test_realworld/
+
+# Backend uploads
+backend/uploads/
 
 # Trained Models
 model/
+models/
 *.keras
 *.h5
 

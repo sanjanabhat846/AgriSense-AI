@@ -1,0 +1,737 @@
+/* ======================================================
+   Google Font
+====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* ======================================================
+   Reset
+====================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+/* ======================================================
+   Body
+====================================================== */
+
+body{
+
+    background:linear-gradient(135deg,#eef8ee,#dff4df);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    min-height:100vh;
+
+    padding:40px 15px;
+
+}
+
+/* ======================================================
+   Container
+====================================================== */
+
+.container{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+/* ======================================================
+   Card
+====================================================== */
+
+.card{
+
+    width:700px;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+/* ======================================================
+   Heading
+====================================================== */
+
+h1{
+
+    text-align:center;
+
+    color:#2E7D32;
+
+    margin-bottom:8px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:25px;
+
+}
+/* ======================================================
+   Header
+====================================================== */
+
+.header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.stats{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+    margin-top:25px;
+
+}
+
+.stat-card{
+
+    flex:1;
+
+    min-width:150px;
+
+    background:linear-gradient(135deg,#43A047,#2E7D32);
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    box-shadow:0 6px 15px rgba(0,0,0,.12);
+
+    transition:.3s;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+.stat-card h3{
+
+    font-size:22px;
+
+    margin-bottom:6px;
+
+}
+
+.stat-card p{
+
+    font-size:14px;
+
+}
+
+/* ======================================================
+   Upload
+====================================================== */
+
+input[type=file]{
+
+    width:100%;
+
+    margin-bottom:20px;
+
+}
+
+/* ======================================================
+   Preview
+====================================================== */
+
+.preview-container{
+
+    margin-bottom:20px;
+
+}
+
+#preview{
+
+    width:100%;
+
+    max-height:320px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    border:2px dashed #cfcfcf;
+
+    display:none;
+
+}
+
+/* ======================================================
+   Button
+====================================================== */
+
+button{
+
+    width:100%;
+
+    border:none;
+
+    background:#2E7D32;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#1B5E20;
+
+    transform:translateY(-2px);
+
+}
+
+button:disabled{
+
+    opacity:.7;
+
+    cursor:not-allowed;
+
+}
+
+/* ======================================================
+   Loading
+====================================================== */
+
+#loading{
+
+    text-align:center;
+
+    margin-top:25px;
+
+    color:#2E7D32;
+
+    font-weight:bold;
+
+}
+
+.spinner{
+
+    width:50px;
+
+    height:50px;
+
+    border:5px solid #ddd;
+
+    border-top:5px solid #2E7D32;
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+    margin:0 auto 15px;
+
+}
+
+@keyframes spin{
+
+    to{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+/* ======================================================
+   Result
+====================================================== */
+
+#result{
+
+    margin-top:35px;
+
+}
+
+#result h2{
+
+    text-align:center;
+
+    color:#2E7D32;
+
+    margin-bottom:25px;
+
+}
+
+/* ======================================================
+   Cards
+====================================================== */
+
+.result-card{
+
+    background:#f8fff8;
+
+    border-left:6px solid #2E7D32;
+
+    padding:18px;
+
+    margin-bottom:18px;
+
+    border-radius:12px;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.05);
+
+    transition:.25s;
+
+}
+
+.result-card:hover{
+
+    transform:translateY(-2px);
+
+}
+
+.result-card h3{
+
+    color:#2E7D32;
+
+    margin-bottom:10px;
+
+}
+
+.result-card p{
+
+    color:#444;
+
+    line-height:1.6;
+
+}
+
+/* ======================================================
+   Lists
+====================================================== */
+
+.result-card ul{
+
+    padding-left:22px;
+
+    margin-top:10px;
+
+}
+
+.result-card li{
+
+    margin-bottom:8px;
+
+    color:#444;
+
+}
+
+/* ======================================================
+   Progress
+====================================================== */
+
+.progress{
+
+    margin-top:15px;
+
+    width:100%;
+
+    height:24px;
+
+    background:#ddd;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+#confidenceBar{
+
+    width:0;
+
+    height:100%;
+
+    background:linear-gradient(90deg,#43A047,#66BB6A);
+
+    color:white;
+
+    text-align:center;
+
+    line-height:24px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    transition:width .8s;
+
+}
+
+/* ======================================================
+   Severity Badge
+====================================================== */
+
+.severity{
+
+    display:inline-block;
+
+    padding:8px 18px;
+
+    border-radius:30px;
+
+    color:white;
+
+    font-weight:600;
+
+}
+
+.healthy{
+
+    background:#2E7D32;
+
+}
+
+.medium{
+
+    background:#F9A825;
+
+}
+
+.high{
+
+    background:#D32F2F;
+
+}
+
+/* ======================================================
+   Utility
+====================================================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+/* ======================================================
+   Responsive
+====================================================== */
+
+@media(max-width:768px){
+
+.card{
+
+    width:100%;
+
+    padding:25px;
+
+}
+
+.result-card{
+
+    padding:15px;
+
+}
+
+}
+/* =======================================
+   Confidence Message
+======================================= */
+
+.confidence-message{
+    margin-top:15px;
+    padding:12px;
+    border-radius:10px;
+    font-weight:600;
+    font-size:16px;
+}
+
+/* =======================================
+   Warning Box
+======================================= */
+
+.warning-box{
+    display:none;
+    margin-top:15px;
+    padding:15px;
+    border-radius:10px;
+    background:#fff3cd;
+    border:1px solid #ffeeba;
+    color:#856404;
+}
+
+.warning-box ul{
+    margin-top:10px;
+    margin-left:20px;
+}
+
+/* =======================================
+   Top Predictions
+======================================= */
+
+.top-predictions{
+    margin-top:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+.top-card{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:18px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+
+    transition:0.3s;
+}
+
+.top-card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,0.15);
+
+}
+
+.top-card h4{
+
+    margin-bottom:8px;
+
+    color:#2e7d32;
+
+}
+
+.top-card p{
+
+    margin-bottom:10px;
+
+    color:#555;
+
+}
+
+.top-card strong{
+
+    color:#1b5e20;
+
+    font-size:18px;
+
+}
+
+/* =======================================
+   Progress Bar Animation
+======================================= */
+
+#confidenceBar{
+
+    transition:width .8s ease;
+
+}
+/* ==============================
+   Reset Button
+============================== */
+
+#resetBtn{
+
+    margin-top:25px;
+
+    width:100%;
+
+    background:#4CAF50;
+
+    color:white;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+#resetBtn:hover{
+
+    background:#388e3c;
+
+}
+.upload-options{
+
+    display:flex;
+
+    gap:15px;
+
+    margin:20px 0;
+
+    align-items:center;
+
+}
+
+#cameraBtn{
+
+    background:#2196F3;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:bold;
+
+}
+
+#cameraBtn:hover{
+
+    background:#1976D2;
+
+}
+/* ==============================
+   Camera Modal
+============================== */
+
+.camera-modal{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+.camera-modal.hidden{
+
+    display:none !important;
+
+}
+
+.camera-content{
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:center;
+
+}
+
+.camera-content video{
+
+    width:500px;
+
+    max-width:90vw;
+
+    border-radius:10px;
+
+}
+
+.camera-buttons{
+
+    margin-top:20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+.camera-buttons button{
+
+    padding:12px 20px;
+
+    border:none;
+
+    border-radius:10px;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+#captureBtn{
+
+    background:#2e7d32;
+
+}
+
+#closeCameraBtn{
+
+    background:#d32f2f;
+
+}
