@@ -25,3 +25,5 @@ venv/
 
 # Jupyter
 .ipynb_checkpoints/
+# Temporary test files
+training/scratch/
